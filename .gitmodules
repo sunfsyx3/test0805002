@@ -1,0 +1,4 @@
+[submodule "sunfsyx3/paastest2/multicompany"]
+	path = sunfsyx3/paastest2/multicompany
+	url = git@github.com:sunfsyx3/paastest2.git
+	branch = master
