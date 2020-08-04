@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record id="object0" model="library.partner">
+            <field name="name">作者甲</field>
+            <field name="is_who">1</field>
+            <field name="address">0</field>
+            <field name="email">0</field>
+        </record>
+        <record id="object1" model="library.partner">
+            <field name="name">作者乙</field>
+            <field name="is_who">1</field>
+            <field name="address">0</field>
+            <field name="email">0</field>
+        </record>
+        <record id="object2" model="library.partner">
+            <field name="name">编辑甲</field>
+            <field name="is_who">2</field>
+            <field name="address">0</field>
+            <field name="email">0</field>
+        </record>
+        <record id="object3" model="library.partner">
+            <field name="name">编辑乙</field>
+            <field name="is_who">2</field>
+            <field name="address">0</field>
+            <field name="email">0</field>
+        </record>
+        <record id="object4" model="library.partner">
+            <field name="name">读者甲</field>
+            <field name="is_who">3</field>
+            <field name="address">0</field>
+            <field name="email">0</field>
+        </record>
+        <record id="object5" model="library.partner">
+            <field name="name">读者乙</field>
+            <field name="is_who">3</field>
+            <field name="address">0</field>
+            <field name="email">0</field>
+        </record>
+        <record id="object6" model="library.partner">
+            <field name="name">图书馆人员甲</field>
+            <field name="is_who">4</field>
+            <field name="address">0</field>
+            <field name="email">0</field>
+        </record>
+        <record id="object7" model="library.partner">
+            <field name="name">图书馆人员乙</field>
+            <field name="is_who">4</field>
+            <field name="address">0</field>
+            <field name="email">0</field>
+        </record>
+    </data>
+</odoo>

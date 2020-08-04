@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+        <menuitem name="图书馆"
+                  web_icon="library,static/description/icon.png"
+                  id="library_menu_root"
+                  sequence="0"/>
+
+        <menuitem name="书籍"
+                  id="library_menu_1"
+                  action="library_book_action"
+                  parent="library_menu_root"
+                  sequence="10"/>
+
+        <menuitem id="library_menu_2"
+                  action="library_rent_action"
+                  parent="library_menu_root"
+                  sequence="20"/>
+
+        <menuitem name="人员信息"
+                  id="library_menu_3"
+                  action="library_partner_action"
+                  parent="library_menu_root"
+                  sequence="30"/>
+  </data>
+</odoo>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+        <record model="ir.ui.view" id="library_partner_form">
+            <field name="name">Library list</field>
+            <field name="model">library.partner</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="great_person" type="object" string="创建" class="oe_highlight" />
+                        <button name="modify_person" type="object" string="修改" class="oe_highlight" />
+                        <button name="search_person" type="object" string="查询" class="btn btn-primary"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="is_who" required="1"/>
+                            </group>
+                            <group>
+                                <field name="address"/>
+                                <field name="email" widget="email"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="借书记录"  attrs="{'invisible': [('is_who', '!=', 3)]}">
+                                <group>
+                                    <field name="record_ids" readonly="1"/>
+                                </group>
+                            </page>
+                            <page string="写书记录"  attrs="{'invisible': [('is_who', '!=', 1)]}">
+                                <group>
+                                    <field name="write_ids" readonly="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="library_partner_list">
+            <field name="name">Library list</field>
+            <field name="model">library.partner</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="is_who"/>
+                    <field name="address"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+      <record model="ir.ui.view" id="library_partner_search">
+            <field name="name">Library list</field>
+            <field name="model">library.partner</field>
+            <field name="arch" type="xml">
+                <search string="Partners">
+                    <field name="name" filter_domain="['|', ('name', 'ilike', self), ('is_who', 'ilike', self)]"/>
+                    <filter name="a111" string="作者" domain="[('is_who', '=', 1)]"/>
+                    <filter name="a222" string="作者和编辑" domain="['|', ('is_who', '=', 1), ('is_who', '=', 2)]"/>
+                    <filter name="b222" string="编辑" domain="[('is_who', '=', 2)]"/>
+                    <filter name="c333" string="借阅人" domain="[('is_who', '=', 3)]"/>
+                    <filter name="d333" string="图书馆人员" domain="[('is_who', '=', 4)]"/>
+                    <separator/>
+                </search>
+            </field>
+      </record>
+
+        <record model="ir.actions.act_window" id="library_partner_action">
+            <field name="name">人员</field>
+            <field name="res_model">library.partner</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="library_partner_list"/>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="search_view_id" ref="library_partner_search"/>
+        </record>
+
+  </data>
+</odoo>
