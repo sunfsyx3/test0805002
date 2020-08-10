@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "图书馆",
+    'name': "图书馆aa",
     'summary': "图书馆",
     'description': "图书馆",
     'author': "www.mypscloud.com",
